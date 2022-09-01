@@ -49,14 +49,20 @@ body {
 .container div button {
     width: 23%;
     height: 40px;
-    border: 1px solid transparent;
+    border: 2px solid #ff76e6;
     outline: 0;
     font-size: 1.6rem;
     font-weight: bolder;
-    color: #6ab4fe;
-    background-color: #ff76e6;
+    color: #ff76e6;
+    background-color: transparent;
     padding: 5px;
     margin-left: 5px;
+}
+
+.container div button:hover {
+    border: 2px solid transparent;
+    color: #6ab4fe;
+    background-color: #ff76e6;
 }
 
 .main-container {
