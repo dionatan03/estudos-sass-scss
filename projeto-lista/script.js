@@ -59,19 +59,20 @@ function salvarDadosStorage() {
   }
 
   const tarefasJson = JSON.stringify(listaDeTarefas);
-  console.log(listaDeTarefas);
+  localStorage.setItem('tarefas', tarefasJson);
+
 }
 
 const btnAdd = document.querySelector('.btn-adiciona');
 
 btnAdd.addEventListener('click', () => {
   criaLista();
-  salvarDadosStorage()
+  salvarDadosStorage();
 });
 
 document.querySelector('.pega-valor').addEventListener('keypress', function (evento) {
   if (evento.keyCode === 13) {
     criaLista();
-    salvarDadosStorage()
+    salvarDadosStorage();
   }
 });
