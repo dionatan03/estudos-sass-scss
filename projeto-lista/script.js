@@ -40,6 +40,7 @@ function criaLista() {
   span.appendChild(txt);
   li.appendChild(span);
   btnFechar();
+  salvarDadosStorage();
 }
 
 function salvarDadosStorage() {
@@ -58,10 +59,11 @@ function salvarDadosStorage() {
 
 function adicionaListaSalvas() { //erro aquui na saida
   const listas = localStorage.getItem("lista");
-  const recebeLista = JSON.parse(listas);
+  let recebeLista = JSON.parse(listas);
 
   for (let lista of recebeLista) {
     console.log(lista);
+    
   }
 }
 adicionaListaSalvas();
@@ -78,7 +80,6 @@ lista.addEventListener(
 );
 
 btnAdd.addEventListener("click", () => {
-  salvarDadosStorage();
   criaLista();
 });
 
@@ -86,7 +87,6 @@ document
   .querySelector(".pega-valor")
   .addEventListener("keypress", function (evento) {
     if (evento.keyCode === 13) {
-      salvarDadosStorage();
       criaLista();
     }
   });
