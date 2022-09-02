@@ -56,7 +56,7 @@ function salvarDadosStorage() {
   localStorage.setItem("lista", tarefasJson);
 }
 
-function adicionaListaSalvas() {
+function adicionaListaSalvas() { //erro aquui na saida
   const listas = localStorage.getItem("lista");
   const recebeLista = JSON.parse(listas);
 
