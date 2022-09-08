@@ -22,25 +22,37 @@ function btnFechar() {
   }
 }
 
-function criaLista() {
-  let li = document.createElement("li");
-  let inputValue = document.querySelector(".pega-valor").value;
-  let t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === "") {
-    alert("você não digitou nada favor rever!");
-  } else {
-    document.querySelector(".criador-de-li").appendChild(li);
-  }
-  document.querySelector(".pega-valor").value = "";
-
-  let span = document.createElement("SPAN");
+//O método abaixo somente é utilizado para criar um item na <ul></ul> do html
+function listarItem(item){
+  let li  = document.createElement("li");
+  let t   = document.createTextNode(item);
+  li.appendChild(t);  
+  document.querySelector(".criador-de-li").appendChild(li);
+  let span= document.createElement("SPAN");
   let txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
   btnFechar();
+}
+
+//Agora esse método é utilizado para apenas criar um item na lista <ul></ul> pegando os dados no formulário
+function criaLista() {
+  let inputValue = document.querySelector(".pega-valor").value;
+  if (inputValue === "") {
+    alert("você não digitou nada favor rever!");
+  }
+  document.querySelector(".pega-valor").value = "";
+  /*
+  O mesmo método que é utilizado para listar os itens na <ul></ul> porém nesmo momento ele está 
+  inserindo apenas o item digitado no formulátio
+  */
+  listarItem(inputValue);
+
+  //Pega os itens na <ul></ul> e armazena no LocalStorage
   salvarDadosStorage();
+
+  //adicionaListaSalvas();
 }
 
 function salvarDadosStorage() {
@@ -58,12 +70,13 @@ function salvarDadosStorage() {
 }
 
 function adicionaListaSalvas() { //erro aquui na saida
+  console.log('adicionaListaSalvas');
   const listas = localStorage.getItem("lista");
   let recebeLista = JSON.parse(listas);
-
+document.querySelector(".criador-de-li").innerHTML = "";
   for (let lista of recebeLista) {
-    console.log(lista);
-    
+    //criaLista(lista);
+    listarItem(lista);
   }
 }
 adicionaListaSalvas();
