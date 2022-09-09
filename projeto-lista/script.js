@@ -39,8 +39,6 @@ function listarItem(item){
 //Agora esse método é utilizado para apenas criar um item na lista <ul></ul> pegando os dados no formulário
 function criaLista() {
   let inputValue = document.querySelector(".pega-valor").value;
-  let t = document.createTextNode(inputValue);
-  li.appendChild(t);
   if (inputValue === "") {
     alert("você não digitou nada favor rever!");
   }
@@ -55,13 +53,6 @@ function criaLista() {
   salvarDadosStorage();
 
   //adicionaListaSalvas();
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-  btnFechar();
-  salvarDadosStorage();
 }
 
 function salvarDadosStorage() {
@@ -79,18 +70,6 @@ function salvarDadosStorage() {
 }
 
 function adicionaListaSalvas() { //erro aquui na saida
-  const listas = localStorage.getItem("lista");
-  let recebeLista = JSON.parse(listas);
-
-  for (let lista of recebeLista) {
-    console.log(lista);
-    
-  }
-
-}
-adicionaListaSalvas();
-
-function adicionaListaSalvas() { //erro aquui na saida
   console.log('adicionaListaSalvas');
   const listas = localStorage.getItem("lista");
   let recebeLista = JSON.parse(listas);
@@ -101,7 +80,6 @@ document.querySelector(".criador-de-li").innerHTML = "";
   }
 }
 adicionaListaSalvas();
-
 
 let lista = document.querySelector("ul");
 lista.addEventListener(
