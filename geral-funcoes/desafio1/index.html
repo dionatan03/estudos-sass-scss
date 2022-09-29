@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+    <script src="script.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .res {
+            border: 1px solid blueviolet;
+            color: blueviolet;
+            font-size: 1.3rem;
+            width: 150px;
+        }
+
+        .rec {
+            border: 1px solid blueviolet;
+            color: blueviolet;
+            padding: 6px;
+            width: 100px;
+        }
+
+        div {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Calculos automaticos</h1>
+        <div>
+            <label for="">Digite um número:
+                <input class="res" type="text">
+                <button class="rec">Enviar</button>
+            </label>
+        </div>
+    </div>
+<div>
+<span>Resultado é: <h2 class="numero"></h2></span>
+</div>
+
+<div>
+    <p>Raiz quadrada é: <h2 class="raiz"></h2></p>
+</div>
+
+<div>
+    <p>Número é inteiro: <h2 class="int"></h2> </p>
+</div>
+<div>
+    <p>Número é NaN: <h2 class="nan"></h2> </p>
+</div>
+
+<div>
+    <p>Número arredondado para baixo: <h2 class="num-min"></h2> </p>
+</div>
+
+<div>
+    <p>Número arredondado para cima: <h2 class="num-max"></h2> </p>
+</div>
+<div>
+    <p>Casas decimais: <h2 class="num-com-dec"></h2> </p>
+</div>
+</body>
+</html>
